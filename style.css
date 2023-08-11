@@ -1,0 +1,14 @@
+.divsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.testDiv {
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+}
