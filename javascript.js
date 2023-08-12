@@ -2,13 +2,22 @@
 
 const Gameboard = (() => {
   const gameSquares = document.querySelectorAll('.testDiv');
-
-  const boardArr = ['X', 'O'];
+  const player1 = 'X';
+  const player2 = 'O';
+  let currentPLayer = player1;
+  let target;
+  /*  const boardArr = ['X', 'O']; */
 
   function addMark(square) {
     gameSquares.forEach(() => {
-      for (let i = 0; i < boardArr.length; i++) {
-        square.textContent = boardArr[i];
+      /* square.textContent = boardArr[0]; */
+      if (square.textContent === '') {
+        square.textContent = currentPLayer;
+        if (currentPLayer === player1) {
+          currentPLayer = player2;
+        } else {
+          currentPLayer = player1;
+        }
       }
     });
   }
@@ -16,9 +25,9 @@ const Gameboard = (() => {
   function addClickListener() {
     gameSquares.forEach((square) => {
       square.addEventListener('click', (e) => {
-        let target = e.target;
-        console.log(target);
+        target = e.target;
         addMark(target);
+        return target;
       });
     });
   }
