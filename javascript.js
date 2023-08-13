@@ -10,17 +10,17 @@ const Gameboard = (() => {
   let target;
   let boardArr = [];
   let winnerFound = false;
-  /*  const boardArr = ['X', 'O']; */
 
   gameSquares.forEach((element) => {
     boardArr.push(element);
   });
 
-  console.log(boardArr);
-
   function addMark(square) {
+    if (winnerFound) {
+      return;
+    }
+
     gameSquares.forEach(() => {
-      /* square.textContent = boardArr[0]; */
       if (square.textContent === '') {
         square.textContent = currentPlayer;
         if (currentPlayer === player1) {
@@ -47,6 +47,7 @@ const Gameboard = (() => {
 
   restartBtn.addEventListener('click', () => {
     currentPlayer = player1;
+    winnerFound = false;
     playerText.textContent = `${currentPlayer}'s turn!`;
     gameSquares.forEach((square) => {
       square.textContent = '';
@@ -63,6 +64,12 @@ const Gameboard = (() => {
     }
 
     console.log(lettersArr);
+
+    let isBoardFull = lettersArr.every((element) => {
+      return element != '';
+    });
+
+    console.log(isBoardFull);
 
     let winningSequences = [
       //These are the winning sequences for the Rows, Columns and Diagonals
@@ -86,8 +93,10 @@ const Gameboard = (() => {
         lettersArr[b] != '' &&
         lettersArr[c] != ''
       ) {
-        console.log('found winner! Winner is ' + lettersArr[a]);
+        playerText.textContent = `Winner is ${lettersArr[a]}!`;
         winnerFound = true;
+      } else if (isBoardFull && !winnerFound) {
+        playerText.textContent = `It's a draw!`;
       }
 
       if (winnerFound) {
