@@ -5,25 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-tac-toe</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <script src="javascript.js" defer></script>
   </head>
   <body>
-    <div class="currentContainer">
-      <h2 class="currentPlayer">X's turn!</h2>
-    </div>
-    <div class="divsContainer">
-      <div class="testDiv div1"></div>
-      <div class="testDiv div2"></div>
-      <div class="testDiv div3"></div>
-      <div class="testDiv div4"></div>
-      <div class="testDiv div5"></div>
-      <div class="testDiv div6"></div>
-      <div class="testDiv div7"></div>
-      <div class="testDiv div8"></div>
-      <div class="testDiv div9"></div>
-    </div>
-    <div class="restartBtnContainer">
-      <button class="restartBtn">Restart Game</button>
+    <div class="mainContainer">
+      <div class="header"><h1 class="title">Tic-Tac-Toe</h1></div>
+      <div class="mainContent">
+        <div class="currentContainer">
+          <h2 class="currentPlayer">X's turn!</h2>
+        </div>
+        <div class="divsContainer">
+          <div class="testDiv div1"></div>
+          <div class="testDiv div2"></div>
+          <div class="testDiv div3"></div>
+          <div class="testDiv div4"></div>
+          <div class="testDiv div5"></div>
+          <div class="testDiv div6"></div>
+          <div class="testDiv div7"></div>
+          <div class="testDiv div8"></div>
+          <div class="testDiv div9"></div>
+        </div>
+        <div class="restartBtnContainer">
+          <button class="restartBtn">Restart Game</button>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="footer githubInfo">
+          <p class="githubText">Made by</p>
+          <a href="https://github.com/osportll"
+            ><img class="githubIcon" src="GitHub-Mark-32px.png" /> osportll</a
+          >
+        </div>
+      </div>
     </div>
   </body>
 </html>
